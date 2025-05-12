@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gioco Turistico - Roma</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fefae0;
+      color: #333;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      background: #d4a373;
+      padding: 15px;
+      color: white;
+      font-size: 24px;
+    }
+    section {
+      margin-top: 20px;
+    }
+    .foto {
+      text-align: center;
+      margin: 20px 0;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .quiz {
+      background: #faedcd;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #ccd5ae;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #b7c3a4;
+    }
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+    .wrong {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>Missione a Roma!</header>
+
+  <section>
+    <h2>1. Trova questo luogo</h2>
+    <div class="foto">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Trevi_Fountain%2C_Rome%2C_Italy.jpg" alt="Fontana di Trevi">
+    </div>
+    <p>Fai una foto alla Fontana di Trevi e caricala sul tuo profilo social con l’hashtag <strong>#RomaMissione</strong>.</p>
+  </section>
+
+  <section class="quiz">
+    <h2>2. Quiz: Sai dove sei?</h2>
+    <p>Quale imperatore ha governato durante la costruzione del Pantheon attuale?</p>
+    <button onclick="checkAnswer('a')">A) Augusto</button><br/>
+    <button onclick="checkAnswer('b')">B) Adriano</button><br/>
+    <button onclick="checkAnswer('c')">C) Nerone</button><br/>
+    <p id="result"></p>
+  </section>
+
+  <script>
+    function checkAnswer(answer) {
+      const result = document.getElementById("result");
+      if (answer === 'b') {
+        result.textContent = "Esatto! Adriano.";
+        result.className = "correct";
+      } else {
+        result.textContent = "Risposta sbagliata. Riprova!";
+        result.className = "wrong";
+      }
+    }
+  </script>
+</body>
+</html>
